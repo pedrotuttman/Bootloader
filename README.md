@@ -223,4 +223,4 @@ Este projeto demonstra, de forma prática:
 
 ## 👤 Autor
 
-Projeto desenvolvido por Rafael Sousa, da hackingnaweb, e adaptado por Pedro Tuttman.
+Projeto desenvolvido por **Rafael Sousa (@hackingnaweb)** e adaptado por **Pedro Tuttman**.
