@@ -89,9 +89,12 @@ Dados gerados pelo compressor:
 - O byte 255 é obrigatório no final dos dados comprimidos.
 
 Exemplo correto:
+
+```àsm
 dados:
     db 10,5,20,7,12
     db 255
+```
 Sem esse byte, o bootloader continua lendo memória inválida, causando artefatos visuais, como listras pretas na tela.
 
 ---
