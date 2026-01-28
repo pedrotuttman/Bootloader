@@ -52,6 +52,8 @@ O bootloader é dividido em **dois estágios**, seguindo práticas comuns em sis
 
 Cada pixel é desenhado diretamente via BIOS.
 
+---
+
 ## 🧩 Compressão da Imagem (RLE)
 
 ### Motivação
@@ -74,6 +76,8 @@ Exemplo conceitual:
 Dados gerados pelo compressor:
 10, 5, 20
 
+---
+
 ## 🧾 Formato dos Dados Comprimidos
 
 - Cada byte indica a quantidade de pixels da cor atual.
@@ -89,6 +93,8 @@ dados:
     db 10,5,20,7,12
     db 255
 Sem esse byte, o bootloader continua lendo memória inválida, causando artefatos visuais, como listras pretas na tela.
+
+---
 
 ## 🛑 Bug Encontrado e Correção
 
@@ -110,6 +116,8 @@ db 255
 Ou no compressor em C:
 buffer[pos++] = 255;
 
+---
+
 ## 🧪 Testes em Assembly
 
 Os arquivos teste*.asm foram desenvolvidos para estudar e validar:
@@ -125,6 +133,8 @@ Os arquivos teste*.asm foram desenvolvidos para estudar e validar:
 
 Esses testes serviram como base para a implementação do bootloader final.
 
+---
+
 ## 🖼️ Formato BMP Aceito
 
 O compressor espera imagens BMP com:
@@ -133,6 +143,8 @@ O compressor espera imagens BMP com:
 - Sem compressão BMP interna.
 - Paleta compatível com o modo 13h.
 - Padding por linha respeitado.
+
+---
 
 ## 📂 Estrutura do Repositório
 ├── BMPFinal/
@@ -177,6 +189,7 @@ O compressor espera imagens BMP com:
 │
 └── README.md
 
+---
 
 ## ▶️ Como Compilar e Executar
 
@@ -194,6 +207,8 @@ nasm -f bin final.asm -o boot.bin
 5. Iniciar a máquina virtual.
 
 O VMware trata o arquivo .bin como um disquete bruto, permitindo que a BIOS carregue o setor de boot diretamente.
+
+---
 
 ### 📌 Conclusão
 
