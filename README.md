@@ -71,10 +71,14 @@ Foi implementado um algoritmo simples de Run-Length Encoding (RLE), adaptado par
 - A cor é alternada automaticamente no código Assembly durante a renderização.
 
 Exemplo conceitual:
+```text
 [10 pixels][5 pixels][20 pixels]
+```
 
 Dados gerados pelo compressor:
+```text
 10, 5, 20
+```
 
 ---
 
@@ -90,7 +94,7 @@ Dados gerados pelo compressor:
 
 Exemplo correto:
 
-```àsm
+```asm
 dados:
     db 10,5,20,7,12
     db 255
@@ -114,10 +118,14 @@ A rotina de descompressão não sabia quando interromper a leitura.
 ### Correção
 
 Adicionar o byte 255 ao final dos dados:
+```text
 db 255
+```
 
 Ou no compressor em C:
+```text
 buffer[pos++] = 255;
+```
 
 ---
 
