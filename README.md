@@ -202,6 +202,93 @@ O compressor espera imagens BMP com:
 │
 └── README.md
 ```
+---
+
+## 📄 Descrição dos Principais Arquivos
+
+Esta seção descreve o papel de cada conjunto de arquivos do repositório, além dos testes em Assembly.
+
+### 📁 BMPFinal/
+
+- `eu.bmp`  
+  Imagem BMP final utilizada no bootloader.  
+  Esta imagem é convertida para o formato esperado pelo compressor e exibida durante o processo de boot.
+
+---
+
+### 📁 BMPTests/
+
+Arquivos BMP utilizados para **testes e validações** durante o desenvolvimento do compressor.
+
+- `FormulaTamanhoLinha.bmp`  
+  Utilizado para verificar o cálculo correto do padding por linha no formato BMP.
+- `teste1.bmp`, `teste2.bmp`, `teste3.bmp`  
+  Imagens de teste com diferentes padrões para validar:
+  - leitura correta do BMP
+  - compressão RLE
+  - integridade visual após descompressão
+
+---
+
+### 📁 BootloaderFinal/
+
+Contém a versão final do bootloader e arquivos auxiliares.
+
+- `final.asm`  
+  Código Assembly principal do bootloader, incluindo:
+  - inicialização em real mode
+  - configuração de segmentos
+  - mudança para modo gráfico
+  - leitura de setores
+  - descompressão e renderização da imagem
+
+- `final.bin`  
+  Binário gerado a partir de `final.asm`, utilizado diretamente como **disquete virtual** no VMware.
+
+- `final_sem_particao.asm`  
+  Versão alternativa do bootloader sem estrutura de partição, utilizada para testes e depuração.
+
+- `dados.txt`  
+  Arquivo contendo os dados da imagem já comprimidos (RLE), usados como referência durante o desenvolvimento.
+
+---
+
+### 📁 CompressorBMP/
+
+Ferramenta escrita em C responsável pela compressão da imagem BMP.
+
+- `main.c`  
+  Programa principal que:
+  - lê o arquivo BMP
+  - valida seu formato
+  - executa a compressão RLE
+  - gera os dados finais utilizados no bootloader
+
+- `bmp.c`  
+  Implementação das rotinas de leitura e interpretação do formato BMP:
+  - headers
+  - cálculo de padding
+  - acesso aos pixels
+
+- `bmp.h`  
+  Definições de estruturas e constantes do formato BMP.
+
+- `CompressorBMP.exe`  
+  Binário compilado da ferramenta de compressão, utilizado durante o desenvolvimento.
+
+---
+
+### 📁 BootloadTests/
+
+Conjunto de testes incrementais em Assembly utilizados para estudar conceitos fundamentais, como:
+
+- interrupções da BIOS
+- segmentação em real mode
+- endereçamento de memória
+- escrita de texto e pixels
+- leitura de disco
+
+Esses arquivos foram essenciais para a construção gradual do bootloader final.
 
 ---
 
