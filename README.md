@@ -147,6 +147,8 @@ O compressor espera imagens BMP com:
 ---
 
 ## 📂 Estrutura do Repositório
+
+```text
 ├── BMPFinal/
 │   └── eu.bmp
 │
@@ -188,12 +190,14 @@ O compressor espera imagens BMP com:
 │   └── main.c
 │
 └── README.md
+```
 
 ---
 
 ## ▶️ Como Compilar e Executar
 
 ### Montagem do Bootloader
+
 ```bash
 nasm -f bin final.asm -o boot.bin
 ```
