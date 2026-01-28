@@ -118,12 +118,12 @@ A rotina de descompressão não sabia quando interromper a leitura.
 ### Correção
 
 Adicionar o byte 255 ao final dos dados:
-```text
+```asm
 db 255
 ```
 
 Ou no compressor em C:
-```text
+```C
 buffer[pos++] = 255;
 ```
 
