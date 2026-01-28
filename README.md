@@ -135,26 +135,48 @@ O compressor espera imagens BMP com:
 - Padding por linha respeitado.
 
 ## 📂 Estrutura do Repositório
-├── bootloader/
-│   ├── final.asm          # Bootloader final
-│   ├── teste.asm          # Testes de BIOS
+├── BMPFinal/
+│   └── eu.bmp
+│
+├── BMPTests/
+│   ├── FormulaTamanhoLinha.bmp
+│   ├── teste1.bmp
+│   ├── teste2.bmp
+│   └── teste3.bmp
+│
+├── BootloadTests/
+│   ├── teste.asm
+│   ├── teste.bin
 │   ├── teste2.asm
+│   ├── teste2.bin
 │   ├── teste3.asm
+│   ├── teste3.bin
 │   ├── teste4.asm
+│   ├── teste4.bin
+│   ├── teste5.asm
+│   ├── teste5.bin
 │   ├── teste5_1.asm
+│   ├── teste5_1.bin
 │   ├── teste6.asm
-│   └── teste6_1.asm
+│   ├── teste6.bin
+│   ├── teste6_1.asm
+│   └── teste6_1.bin
 │
-├── compressor/
-│   ├── bmp.c              # Compressor BMP (RLE)
-│   ├── bmp.h              # Estruturas BMP
-│   └── main.c             # Ferramenta de linha de comando
+├── BootloaderFinal/
+│   ├── dados.txt
+│   ├── final
+│   ├── final.asm
+│   ├── final.bin
+│   └── final_sem_particao.asm
 │
-├── imagens/
-│   ├── original.bmp
-│   └── comprimido.txt
+├── CompressorBMP/
+│   ├── CompressorBMP.exe
+│   ├── bmp.c
+│   ├── bmp.h
+│   └── main.c
 │
 └── README.md
+
 
 ## ▶️ Como Compilar e Executar
 
